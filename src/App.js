@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+import Candidates from "./PagesFront/Candidates/Candidates";
+import Candidate from "./PagesFront/Candidate/Candidate";
 
 function App() {
+  const [candidates, setCandidates] = useState([]);
+  const [reports, setReports] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3333/api/candidates")
+      .then((data) => data.json())
+      .then((data) => setCandidates(data));
+    fetch("http://localhost:3333/api/reports")
+      .then((data) => data.json())
+      .then((data) => setReports(data));
+  }, []);
+  console.log(reports, "APPPPPP");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={() => <Candidates candidates={candidates} reports={reports} />}
+      />
+      <Route path="/candidate/:id" component={Candidate}></Route>
+    </Switch>
   );
 }
 

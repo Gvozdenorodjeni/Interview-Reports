@@ -1,0 +1,27 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px auto 10px auto;
+  height: 100px;
+  border-bottom: 1px solid #ff893d;
+  .card-wrapper {
+    display: flex;
+    align-items: center;
+    img {
+      display: block;
+      margin-right: 30px;
+    }
+    .name {
+      margin-bottom: 10px;
+    }
+  }
+  .infoButton {
+    background-color: #ff893d;
+    border-radius: 5px;
+    padding: 2px 4px;
+    color: white;
+    border: none;
+  }
+}
