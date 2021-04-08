@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   const { candidate, reports } = props;
-  console.log(props.reports, "XXXXXXXXXXXXXXXXXXXXXX");
   return (
     <div className="card">
       <div className="card-wrapper">
-        <img src={candidate.avatar} alt="picture" />
+        <img src={candidate.avatar} alt="avatar" />
         <div className="nameandemail">
           <p className="name">{candidate.name}</p>
           <p className="email">{candidate.email}</p>

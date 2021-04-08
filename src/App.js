@@ -18,7 +18,6 @@ function App() {
       .then((data) => data.json())
       .then((data) => setReports(data));
   }, []);
-  console.log(reports, "APPPPPP");
   return (
     <Switch>
       <Route
@@ -26,7 +25,12 @@ function App() {
         path="/"
         render={() => <Candidates candidates={candidates} reports={reports} />}
       />
-      <Route path="/candidate/:id" component={Candidate}></Route>
+      <Route
+        path="/candidate/:id"
+        render={(routeInfo) => (
+          <Candidate {...routeInfo} candidates={candidates} reports={reports} />
+        )}
+      ></Route>
     </Switch>
   );
 }
