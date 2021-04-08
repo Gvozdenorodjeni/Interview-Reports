@@ -44,3 +44,44 @@
     }
   }
 }
+
+// color: #ff893d;
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(233, 233, 233);
+  border: 2px solid #ff893d;
+  padding: 25px;
+  z-index: 1000;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+.modalInfo {
+  display: flex;
+  p {
+    color: grey;
+  }
+  .personalInfo {
+    width: 50%;
+    margin-top: 20px;
+  }
+  .modalNotes {
+    margin-top: 20px;
+    width: 50%;
+    .personalNote {
+      color: black;
+    }
+  }
+}

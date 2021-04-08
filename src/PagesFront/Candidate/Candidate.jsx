@@ -13,7 +13,6 @@ const Candidate = (props) => {
     (e) => props.match.params.id == e.candidateId
   );
 
-  console.log(candidate, reports);
   return candidate && reports ? (
     <div className="singlecandidatediv">
       <div className="infodiv">
@@ -29,7 +28,7 @@ const Candidate = (props) => {
           <h3>
             {new Date(candidate.birthday).getDate() +
               " " +
-              new Date(candidate.birthday).getMonth() +
+              (new Date(candidate.birthday).getMonth() + 1) +
               " " +
               new Date(candidate.birthday).getFullYear()}
           </h3>
@@ -55,6 +54,7 @@ const Candidate = (props) => {
                 {new Date(e.interviewDate).getDate() +
                   " " +
                   new Date(e.interviewDate).getMonth() +
+                  1 +
                   " " +
                   new Date(e.interviewDate).getFullYear()}
               </td>
@@ -62,7 +62,34 @@ const Candidate = (props) => {
               <td>
                 <div className="candidate">
                   <i class="fas fa-eye" onClick={() => setIsOpen(true)}></i>
-                  <Modal open={isOpen}></Modal>
+                  <Modal onClose={() => setIsOpen(false)} open={isOpen}>
+                    {console.log(e)}
+                    <h2>{candidate.name}</h2>
+                    <hr />
+                    <div className="modalInfo">
+                      <div className="personalInfo">
+                        <p>Company</p>
+                        <h2>{e.companyName}</h2>
+                        <p>Interview Date</p>
+                        <h2>
+                          {new Date(e.interviewDate).getDate() +
+                            " " +
+                            new Date(e.interviewDate).getMonth() +
+                            1 +
+                            " " +
+                            new Date(e.interviewDate).getFullYear()}
+                        </h2>
+                        <p>Phase</p>
+                        <h2>{e.phase}</h2>
+                        <p>Status</p>
+                        <h2>{e.status}</h2>
+                      </div>
+                      <div className="modalNotes">
+                        <p>Notes</p>
+                        <p className="personalNote">{e.note}</p>
+                      </div>
+                    </div>
+                  </Modal>
                 </div>
               </td>
             </tr>
