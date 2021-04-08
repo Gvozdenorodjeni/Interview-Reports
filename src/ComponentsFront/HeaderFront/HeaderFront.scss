@@ -10,6 +10,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logo {
+      color: white;
+      text-decoration: none;
+    }
     .loginLogout {
       button {
         background-color: #ffffff;

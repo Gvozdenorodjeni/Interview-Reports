@@ -1,3 +1,50 @@
+.singlecandidatediv {
+  width: 90%;
+  margin: auto;
+  .infodiv {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    img {
+      display: block;
+      width: 30%;
+    }
+    .nameemaildiv {
+      width: 30%;
+      h6 {
+        margin: 10px;
+      }
+      h3 {
+        margin: 10px;
+      }
+    }
+    .dateeducationdiv {
+      width: 30%;
+      h6 {
+        margin: 10px;
+      }
+      h3 {
+        margin: 10px;
+      }
+    }
+  }
+  table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+    td {
+      border: 1px solid white;
+      text-align: center;
+    }
+    thead {
+      background-color: #ff893d;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #fdc29a;
+    }
+  }
+}
+
 // color: #ff893d;
 .modal {
   position: fixed;
