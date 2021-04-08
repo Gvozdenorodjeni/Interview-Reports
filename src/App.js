@@ -1,8 +1,34 @@
 import "./App.css";
+import React from "react";
+import { Route, Switch } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+import Candidates from "./PagesFront/Candidates/Candidates";
+import Candidate from "./PagesFront/Candidate/Candidate";
+
 function App() {
-  return <div className="App">123</div>;
+  const [candidates, setCandidates] = useState([]);
+  const [reports, setReports] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3333/api/candidates")
+      .then((data) => data.json())
+      .then((data) => setCandidates(data));
+    fetch("http://localhost:3333/api/reports")
+      .then((data) => data.json())
+      .then((data) => setReports(data));
+  }, []);
+  console.log(reports, "APPPPPP");
+  return (
+    <Switch>
+      <Route
+        exact
+        path="/"
+        render={() => <Candidates candidates={candidates} reports={reports} />}
+      />
+      <Route path="/candidate/:id" component={Candidate}></Route>
+    </Switch>
+  );
 }
 
 export default App;
