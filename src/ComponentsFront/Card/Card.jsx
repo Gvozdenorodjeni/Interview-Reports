@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   const { candidate, reports } = props;
+  console.log(props, "Props od necega");
   return (
     <div className="card">
       <div className="card-wrapper">
@@ -16,8 +17,6 @@ const Card = (props) => {
       <Link
         to={{
           pathname: `/candidate/${candidate.id}`,
-          reports: reports,
-          candidate: candidate,
         }}
       >
         <button className="infoButton">Info</button>
