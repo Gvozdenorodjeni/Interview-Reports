@@ -23,5 +23,13 @@
     padding: 2px 4px;
     color: white;
     border: none;
+    &:hover {
+      transition: all 200ms;
+      background-color: white;
+      color: #ff893d;
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }

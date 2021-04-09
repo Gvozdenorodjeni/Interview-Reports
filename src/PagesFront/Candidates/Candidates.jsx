@@ -8,7 +8,6 @@ const Candidates = (props) => {
   let filteredData = props.candidates.filter((e) =>
     e.name.toLowerCase().includes(inputValue.toLocaleLowerCase())
   );
-  console.log(inputValue);
 
   return (
     <>
@@ -16,17 +15,13 @@ const Candidates = (props) => {
       <div className="searchCandidates">
         <input
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Search"
+          placeholder="&#x2315; Search"
           type="text"
         />
       </div>
       <div className="candidatesdiv">
         {filteredData.map((e) => (
-          <Card
-            candidate={e}
-            candidates={filteredData}
-            reports={props.reports}
-          />
+          <Card candidate={e} />
         ))}
       </div>
     </>

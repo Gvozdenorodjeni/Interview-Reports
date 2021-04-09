@@ -1,6 +1,6 @@
 import React from "react";
 import "./Candidate.scss";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
 import Modal from "../../ComponentsFront/Modal/Modal";
@@ -23,16 +23,16 @@ const Candidate = (props) => {
   return candidate && reports ? (
     <>
       <Header />
-      <div className="singlecandidatediv">
-        <div className="infodiv">
+      <div className="singleCandidateDiv">
+        <div className="infoDiv">
           <img src={candidate.avatar} alt="" />
-          <div className="nameemaildiv">
+          <div className="nameeMailDiv">
             <h6>Name:</h6>
             <h3>{candidate.name}</h3>
             <h6>Email:</h6>
             <h3>{candidate.email}</h3>
           </div>
-          <div className="dateeducationdiv">
+          <div className="dateEducationDiv">
             <h6>Date:</h6>
             <h3>
               {new Date(candidate.birthday).getDate() +

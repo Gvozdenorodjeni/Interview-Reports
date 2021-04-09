@@ -1,16 +1,20 @@
-.singlecandidatediv {
+// color: #ff893d;
+.singleCandidateDiv {
   width: 90%;
   margin: auto;
-  .infodiv {
+  margin-top: 50px;
+  .infoDiv {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     img {
       display: block;
       width: 30%;
+      background-color: grey;
     }
-    .nameemaildiv {
+    .nameeMailDiv {
       width: 30%;
+
       h6 {
         margin: 10px;
       }
@@ -18,7 +22,7 @@
         margin: 10px;
       }
     }
-    .dateeducationdiv {
+    .dateEducationDiv {
       width: 30%;
       h6 {
         margin: 10px;
@@ -45,13 +49,13 @@
   }
 }
 
-// color: #ff893d;
+// MODAL
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(233, 233, 233);
+  background-color: white;
   border: 2px solid #ff893d;
   padding: 25px;
   z-index: 1000;

@@ -23,6 +23,14 @@
         color: #ff893d;
         margin-left: 10px;
         font-weight: bold;
+        &:hover {
+          background-color: #ff893d;
+          color: #ffffff;
+          transition: all 200ms;
+        }
+        &:focus {
+          outline: none;
+        }
       }
     }
   }

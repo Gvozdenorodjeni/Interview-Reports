@@ -3,8 +3,7 @@ import "./Card.scss";
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
-  const { candidate, reports } = props;
-  console.log(props, "Props od necega");
+  const { candidate } = props;
   return (
     <div className="card">
       <div className="card-wrapper">
