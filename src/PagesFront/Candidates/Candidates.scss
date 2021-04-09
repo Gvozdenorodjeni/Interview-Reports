@@ -1,10 +1,13 @@
 .searchCandidates {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 90%;
-  margin: auto;
+  margin: 10px auto 10px auto;
   input {
+    display: block;
     border: 2px solid #ff893d;
     border-radius: 10px;
-    margin-top: 15px;
     width: 13%;
     padding: 2px 3px;
     &:focus {

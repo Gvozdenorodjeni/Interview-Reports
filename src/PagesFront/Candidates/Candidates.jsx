@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Candidates.scss";
 import Card from "../../ComponentsFront/Card/Card";
-import HeaderFront from "../../ComponentsFront/HeaderFront/HeaderFront";
 
 const Candidates = (props) => {
   const [inputValue, setInputValue] = useState("");
@@ -11,8 +10,8 @@ const Candidates = (props) => {
 
   return (
     <>
-      <HeaderFront />
       <div className="searchCandidates">
+        <h1>Interview Reports</h1>
         <input
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="&#x2315; Search"

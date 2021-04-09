@@ -2,17 +2,37 @@ import React from "react";
 import "./HeaderFront.scss";
 import { Link } from "react-router-dom";
 
-const HeaderFront = () => {
+const HeaderFront = (props) => {
   return (
     <header className="headerFrontBackground">
       <div className="headerFront">
-        <Link to={"/"} style={{ textDecoration: "none" }}>
+        <Link to="/" style={{ textDecoration: "none" }}>
           <h1 className="logo">Logo</h1>
         </Link>
-
         <div className="loginLogout">
-          <button>Logout</button>
-          <button>Login</button>
+          {props.token ? (
+            <>
+              <Link to="/reports">
+                <button>Reports</button>
+              </Link>
+
+              <button>Create Report</button>
+              <Link to="/">
+                <button
+                  onClick={() => {
+                    props.setToken("");
+                    localStorage.setItem("token", "");
+                  }}
+                >
+                  Logout
+                </button>
+              </Link>
+            </>
+          ) : (
+            <Link to={"/login"}>
+              <button>Login</button>
+            </Link>
+          )}
         </div>
       </div>
     </header>

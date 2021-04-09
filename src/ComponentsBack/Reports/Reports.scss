@@ -1,0 +1,43 @@
+.reportsWrapper {
+  width: 90%;
+  margin: auto;
+  .reportWrapper {
+    padding: 5px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 2px -2px #ff893d;
+    div {
+      width: 20%;
+      border-right: 2px solid #ff893d;
+      text-align: center;
+    }
+    div:last-child {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      border: none;
+      button {
+        margin: 10px;
+      }
+    }
+  }
+}
+.searchReports {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 10px auto 10px auto;
+  input {
+    display: block;
+    border: 2px solid #ff893d;
+    border-radius: 10px;
+    width: 13%;
+    padding: 2px 3px;
+    &:focus {
+      outline: none;
+    }
+  }
+}

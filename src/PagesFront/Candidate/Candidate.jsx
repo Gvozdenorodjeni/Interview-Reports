@@ -4,7 +4,6 @@ import { useState } from "react";
 import { v4 as uuid } from "uuid";
 
 import Modal from "../../ComponentsFront/Modal/Modal";
-import Header from "../../ComponentsFront/HeaderFront/HeaderFront";
 
 const Candidate = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +21,6 @@ const Candidate = (props) => {
 
   return candidate && reports ? (
     <>
-      <Header />
       <div className="singleCandidateDiv">
         <div className="infoDiv">
           <img src={candidate.avatar} alt="" />
@@ -84,9 +82,7 @@ const Candidate = (props) => {
         </table>
       </div>
     </>
-  ) : (
-    <Header />
-  );
+  ) : null;
 };
 
 export default Candidate;
