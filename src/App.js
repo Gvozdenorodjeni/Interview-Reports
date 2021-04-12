@@ -64,7 +64,11 @@ function App() {
             exact
             path="/wizard"
             render={() => (
-              <Wizard candidates={candidates} companies={companies} />
+              <Wizard
+                candidates={candidates}
+                companies={companies}
+                token={token}
+              />
             )}
           />
         ) : (

@@ -25,7 +25,7 @@ const Wizard = (props) => {
     note: null,
   });
   const gray = { color: "gray", fontWeight: 300 };
-  console.log(createdReport);
+
   // CANDIDATES FILTER
   let filteredData = props.candidates.filter((e) =>
     e.name.toLowerCase().includes(inputValue.toLocaleLowerCase())
@@ -59,6 +59,15 @@ const Wizard = (props) => {
       status: status,
       note: notes,
     });
+    console.log(createdReport);
+    fetch("http://localhost:3333/reports", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${props.token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(createdReport),
+    }).then((res) => console.log(res));
   };
 
   //   -----WIZARD FIRST PAGE-----
