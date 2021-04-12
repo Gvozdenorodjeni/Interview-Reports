@@ -1,0 +1,23 @@
+.cardWiz {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  height: 100px;
+  box-shadow: 0 4px 2px -2px #ff893d;
+  .card-wrapperWiz {
+    display: flex;
+    align-items: center;
+    img {
+      display: block;
+      margin-right: 30px;
+    }
+    .nameWiz {
+      margin-bottom: 10px;
+    }
+  }
+  &:hover {
+    background-color: #ff893d;
+  }
+}

@@ -15,8 +15,10 @@ const HeaderFront = (props) => {
               <Link to="/reports">
                 <button>Reports</button>
               </Link>
+              <Link to="/Wizard">
+                <button>Create Report</button>
+              </Link>
 
-              <button>Create Report</button>
               <Link to="/">
                 <button
                   onClick={() => {

@@ -11,6 +11,9 @@
     box-shadow: 0 4px 2px -2px #ff893d;
     &:hover {
       background-color: #ff893d;
+      div {
+        border-right: 2px solid #ffffff;
+      }
     }
     div {
       width: 20%;
