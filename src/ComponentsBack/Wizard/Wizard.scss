@@ -10,7 +10,7 @@
     width: 30%;
     text-align: center;
     p {
-      margin-bottom: 10px;
+      margin: 10px;
     }
     div {
       margin: 10px;
@@ -32,7 +32,7 @@
     width: 70%;
     padding-left: 15px;
     box-shadow: -4px 0px 0px -2px #ff893d;
-    .backnextbuttons {
+    .backNextButtons {
       display: flex;
       .back {
         background-color: gray;
@@ -68,4 +68,50 @@
 hr {
   margin: 20px auto;
   width: 80%;
+}
+// THIRD PAGE
+
+.thirdPageDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 70%;
+  margin: auto;
+  .datePhaseStatus {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  p {
+    color: gray;
+  }
+
+  .notes {
+    width: 80%;
+    margin: 20px auto;
+
+    textarea {
+      width: 100%;
+    }
+  }
+  .backNextButtons {
+    .wizardNext {
+      background-color: #ff893d;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 5px 10px;
+      margin: 15px;
+      outline: none;
+      &:hover {
+        color: #ff893d;
+        background-color: white;
+      }
+    }
+    .back {
+      background-color: gray;
+    }
+  }
 }

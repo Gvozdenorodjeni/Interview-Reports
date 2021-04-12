@@ -3,7 +3,6 @@ import "./CardWiz.scss";
 
 const CardWiz = (props) => {
   const { candidate } = props;
-  console.log(props, "asdasd");
   let background = {};
   if (props.candidateId === candidate.id)
     background = { backgroundColor: "#ff893d" };
