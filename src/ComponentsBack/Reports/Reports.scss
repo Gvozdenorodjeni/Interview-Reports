@@ -3,11 +3,15 @@
   margin: auto;
   .reportWrapper {
     padding: 5px;
+    padding-right: 15px;
     width: 100%;
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 4px 2px -2px #ff893d;
+    &:hover {
+      background-color: #ff893d;
+    }
     div {
       width: 20%;
       border-right: 2px solid #ff893d;
@@ -18,9 +22,15 @@
       flex-direction: row-reverse;
       align-items: center;
       border: none;
-      button {
-        margin: 10px;
+      .delete {
+        color: rgb(255, 41, 41);
+        margin-right: 20px;
       }
+    }
+    h6 {
+      font-weight: 500;
+      font-size: 12px;
+      color: rgb(90, 90, 90);
     }
   }
 }
@@ -29,7 +39,7 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  margin: 10px auto 10px auto;
+  margin: 10px auto 30px auto;
   input {
     display: block;
     border: 2px solid #ff893d;

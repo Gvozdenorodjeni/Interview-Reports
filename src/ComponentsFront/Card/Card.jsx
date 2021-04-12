@@ -9,7 +9,7 @@ const Card = (props) => {
       <div className="card-wrapper">
         <img src={candidate.avatar} alt="avatar" />
         <div className="nameandemail">
-          <p className="name">{candidate.name}</p>
+          <h3 className="name">{candidate.name}</h3>
           <p className="email">{candidate.email}</p>
         </div>
       </div>

@@ -9,11 +9,15 @@ const Reports = (props) => {
     setIsOpen(true);
     setReport(rep);
   };
+
   const [inputValue, setInputValue] = useState("");
   const { reports } = props;
   console.log(reports);
-  let filteredData = reports.filter((e) =>
-    e.candidateName.toLowerCase().includes(inputValue.toLocaleLowerCase())
+  let filteredData = reports.filter(
+    (e) =>
+      e.candidateName.toLowerCase().includes(inputValue.toLocaleLowerCase()) ||
+      e.companyName.toLowerCase().includes(inputValue.toLocaleLowerCase()) ||
+      e.status.toLowerCase().includes(inputValue.toLocaleLowerCase())
   );
   return (
     <>
@@ -58,7 +62,7 @@ const Reports = (props) => {
                 onClose={() => setIsOpen(false)}
                 open={isOpen}
               ></Modal>{" "}
-              <button>Delete</button>
+              <i className="fas fa-trash-alt delete"></i>
             </div>
           </div>
         ))}
