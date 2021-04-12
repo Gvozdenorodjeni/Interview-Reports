@@ -36,7 +36,13 @@ const Wizard = (props) => {
     });
   };
 
-  const addCompany = (id, companyName) => {};
+  const addCompany = (id, companyName) => {
+    setCreatedReport({
+      ...createdReport,
+      companyId: id,
+      companyName: companyName,
+    });
+  };
   console.log(createdReport);
   //   -----WIZARD FIRST PAGE-----
   if (page === 1) {
@@ -59,6 +65,9 @@ const Wizard = (props) => {
             </div>
             <h2 style={gray}>Fill Report Details</h2>
           </div>
+          <hr />
+          <p>Candidate:</p>
+          <h3>{createdReport.candidateName}</h3>
         </div>
         <div className="wizardCandidates">
           <input
@@ -69,7 +78,11 @@ const Wizard = (props) => {
             onChange={(e) => setInputValue(e.target.value)}
           />
           {filteredData.map((candidate) => (
-            <CardWiz candidate={candidate} addCandidate={addCandidate} />
+            <CardWiz
+              candidate={candidate}
+              addCandidate={addCandidate}
+              candidateId={createdReport.candidateId}
+            />
           ))}
           <button
             className="wizardNext"
@@ -104,7 +117,11 @@ const Wizard = (props) => {
             </div>
             <h2 style={gray}>Fill Report Details</h2>
           </div>
+          <hr />
+          <p>Candidate:</p>
+          <h3>{createdReport.candidateName}</h3>
         </div>
+
         <div className="wizardCandidates">
           <input
             placeholder="&#x2315; Search"
@@ -114,7 +131,11 @@ const Wizard = (props) => {
             onChange={(e) => setInputValueCompany(e.target.value)}
           />
           {filteredCompanyData.map((company) => (
-            <CompanyCard company={company} addCompany={addCompany} />
+            <CompanyCard
+              company={company}
+              addCompany={addCompany}
+              companyId={createdReport.companyId}
+            />
           ))}
           <div className="backnextbuttons">
             <button
