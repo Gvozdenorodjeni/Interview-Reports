@@ -13,17 +13,21 @@ function App() {
   const [reports, setReports] = useState([]);
   const [companies, setCompanies] = useState([]);
   const [token, setToken] = useState(localStorage.getItem("token"));
+  const [dataUpToDate, setDataUpToDate] = useState(false);
   useEffect(() => {
-    fetch("http://localhost:3333/api/candidates")
-      .then((data) => data.json())
-      .then((data) => setCandidates(data));
-    fetch("http://localhost:3333/api/reports")
-      .then((data) => data.json())
-      .then((data) => setReports(data));
-    fetch("http://localhost:3333/api/companies")
-      .then((data) => data.json())
-      .then((data) => setCompanies(data));
-  }, []);
+    if (!dataUpToDate) {
+      fetch("http://localhost:3333/api/candidates")
+        .then((data) => data.json())
+        .then((data) => setCandidates(data));
+      fetch("http://localhost:3333/api/reports")
+        .then((data) => data.json())
+        .then((data) => setReports(data));
+      fetch("http://localhost:3333/api/companies")
+        .then((data) => data.json())
+        .then((data) => setCompanies(data));
+      setDataUpToDate(true);
+    }
+  }, [dataUpToDate]);
   return (
     <>
       <HeaderFront token={token} setToken={setToken} />
@@ -54,7 +58,13 @@ function App() {
           <Route
             exact
             path="/reports"
-            render={() => <Reports reports={reports} />}
+            render={() => (
+              <Reports
+                reports={reports}
+                token={token}
+                setDataUpToDate={setDataUpToDate}
+              />
+            )}
           />
         ) : (
           <Redirect to="/login" />
@@ -68,6 +78,7 @@ function App() {
                 candidates={candidates}
                 companies={companies}
                 token={token}
+                setDataUpToDate={setDataUpToDate}
               />
             )}
           />

@@ -1,29 +1,23 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Wizard.scss";
 import CardWiz from "../CardWiz/CardWiz";
 import CompanyCard from "../CompanyCard/CompanyCard";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 const Wizard = (props) => {
+  const [candidateId, setCandidateId] = useState(null);
+  const [candidateName, setCandidateName] = useState("");
+  const [companyId, setCompanyId] = useState(null);
+  const [companyName, setCompanyName] = useState("");
   const [startDate, setStartDate] = useState(new Date());
-  const [phase, setPhase] = useState("");
-  const [status, setStatus] = useState("");
+  const [phase, setPhase] = useState("technical");
+  const [status, setStatus] = useState("passed");
   const [notes, setNotes] = useState("");
-
   const [page, setPage] = useState(1);
   const [inputValue, setInputValue] = useState("");
   const [inputValueCompany, setInputValueCompany] = useState("");
 
-  const [createdReport, setCreatedReport] = useState({
-    candidateId: null,
-    candidateName: null,
-    companyId: null,
-    companyName: null,
-    interviewDate: null,
-    phase: null,
-    status: null,
-    note: null,
-  });
   const gray = { color: "gray", fontWeight: 300 };
 
   // CANDIDATES FILTER
@@ -36,38 +30,34 @@ const Wizard = (props) => {
   );
 
   const addCandidate = (id, candidateName) => {
-    setCreatedReport({
-      ...createdReport,
-      candidateId: id,
-      candidateName: candidateName,
-    });
+    setCandidateName(candidateName);
+    setCandidateId(id);
   };
 
   const addCompany = (id, companyName) => {
-    setCreatedReport({
-      ...createdReport,
-      companyId: id,
-      companyName: companyName,
-    });
+    setCompanyId(id);
+    setCompanyName(companyName);
   };
 
-  const addInfoAndFetch = () => {
-    setCreatedReport({
-      ...createdReport,
-      interviewDate: startDate,
-      phase: phase,
-      status: status,
-      note: notes,
-    });
-    console.log(createdReport);
-    fetch("http://localhost:3333/reports", {
+  const handleFetch = () => {
+    fetch("http://localhost:3333/api/reports/", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${props.token}`,
         "Content-Type": "application/json",
+        Authorization: `Bearer ${props.token}`,
       },
-      body: JSON.stringify(createdReport),
+      body: JSON.stringify({
+        candidateId: candidateId,
+        candidateName: candidateName,
+        companyId: companyId,
+        companyName: companyName,
+        interviewDate: startDate,
+        phase: phase,
+        status: status,
+        note: notes,
+      }),
     }).then((res) => console.log(res));
+    props.setDataUpToDate(false);
   };
 
   //   -----WIZARD FIRST PAGE-----
@@ -104,13 +94,13 @@ const Wizard = (props) => {
             <CardWiz
               candidate={candidate}
               addCandidate={addCandidate}
-              candidateId={createdReport.candidateId}
+              candidateId={candidateId}
             />
           ))}
           <button
             className="wizardNext"
             onClick={() => {
-              if (createdReport.candidateName) setPage(2);
+              if (candidateName) setPage(2);
               else alert("Please select candidate");
             }}
           >
@@ -142,7 +132,7 @@ const Wizard = (props) => {
           </div>
           <hr />
           <p>Candidate:</p>
-          <h3>{createdReport.candidateName}</h3>
+          <h3>{candidateName}</h3>
         </div>
 
         <div className="wizardCandidates">
@@ -157,7 +147,7 @@ const Wizard = (props) => {
             <CompanyCard
               company={company}
               addCompany={addCompany}
-              companyId={createdReport.companyId}
+              companyId={companyId}
             />
           ))}
           <div className="backNextButtons">
@@ -172,7 +162,7 @@ const Wizard = (props) => {
             <button
               className="wizardNext"
               onClick={() => {
-                if (createdReport.companyName) setPage(3);
+                if (companyName) setPage(3);
                 else alert("Please select a company");
               }}
             >
@@ -206,9 +196,9 @@ const Wizard = (props) => {
           </div>
           <hr />
           <p>Candidate:</p>
-          <h3>{createdReport.candidateName}</h3>
+          <h3>{candidateName}</h3>
           <p>Company:</p>
-          <h3>{createdReport.companyName}</h3>
+          <h3>{companyName}</h3>
         </div>
         <div className="thirdPageDiv">
           <div className="datePhaseStatus">
@@ -225,22 +215,23 @@ const Wizard = (props) => {
             <div className="phase">
               <p>Phase</p>
               <select onChange={(e) => setPhase(e.target.value)}>
-                <option value="CV">CV</option>
-                <option value="Technical">Technical</option>
-                <option value="HR">HR</option>
+                <option value="cv">CV</option>
+                <option value="technical">Technical</option>
+                <option value="hr">HR</option>
               </select>
             </div>
             <div className="status">
               <p>Status</p>
               <select onChange={(e) => setStatus(e.target.value)}>
-                <option value="Passed">Passed</option>
-                <option value="Declined">Declined</option>
+                <option value="passed">Passed</option>
+                <option value="declined">Declined</option>
               </select>
             </div>
           </div>
           <div className="notes">
             <p>Notes:</p>
             <textarea
+              className="modalNotes personalNote"
               name="notes"
               id=""
               cols="30"
@@ -253,9 +244,11 @@ const Wizard = (props) => {
             <button className="back wizardNext" onClick={() => setPage(2)}>
               BACK
             </button>
-            <button className="wizardNext" onClick={() => addInfoAndFetch()}>
-              SUBMIT
-            </button>
+            <Link to="/reports">
+              <button className="wizardNext" onClick={() => handleFetch()}>
+                SUBMIT
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Reports.scss";
 import Modal from "../../ComponentsFront/Modal/Modal";
 
@@ -10,6 +10,16 @@ const Reports = (props) => {
     setReport(rep);
   };
 
+  const delReport = (e) => {
+    fetch("http://localhost:3333/api/reports/" + e.id, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${props.token}`,
+      },
+    }).then((res) => console.log(res));
+    props.setDataUpToDate(false);
+  };
+
   const [inputValue, setInputValue] = useState("");
   const { reports } = props;
   console.log(reports);
@@ -19,6 +29,7 @@ const Reports = (props) => {
       e.companyName.toLowerCase().includes(inputValue.toLocaleLowerCase()) ||
       e.status.toLowerCase().includes(inputValue.toLocaleLowerCase())
   );
+
   return (
     <>
       <div className="searchReports">
@@ -62,7 +73,10 @@ const Reports = (props) => {
                 onClose={() => setIsOpen(false)}
                 open={isOpen}
               ></Modal>{" "}
-              <i className="fas fa-trash-alt delete"></i>
+              <i
+                className="fas fa-trash-alt delete"
+                onClick={() => delReport(e)}
+              ></i>
             </div>
           </div>
         ))}
