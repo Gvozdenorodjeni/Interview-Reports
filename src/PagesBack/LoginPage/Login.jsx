@@ -1,6 +1,6 @@
 import React from "react";
 import "./Login.scss";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Redirect } from "react-router-dom";
 
 const LoginPage = (props) => {

@@ -2,6 +2,7 @@ import React from "react";
 import "./Candidate.scss";
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
+import Photo from "../../img/photo.jpg";
 
 import Modal from "../../ComponentsFront/Modal/Modal";
 
@@ -23,7 +24,7 @@ const Candidate = (props) => {
     <>
       <div className="singleCandidateDiv">
         <div className="infoDiv">
-          <img src={candidate.avatar} alt="" />
+          <img src={Photo} alt="" />
           <div className="nameeMailDiv">
             <h6>Name:</h6>
             <h3>{candidate.name}</h3>

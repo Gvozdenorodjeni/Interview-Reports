@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Wizard.scss";
 import CardWiz from "../CardWiz/CardWiz";
 import CompanyCard from "../CompanyCard/CompanyCard";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { v4 as uuid } from "uuid";
 const Wizard = (props) => {
   const [candidateId, setCandidateId] = useState(null);
   const [candidateName, setCandidateName] = useState("");
@@ -97,6 +98,7 @@ const Wizard = (props) => {
           />
           {filteredData.map((candidate) => (
             <CardWiz
+              key={uuid()}
               candidate={candidate}
               addCandidate={addCandidate}
               candidateId={candidateId}
@@ -150,6 +152,7 @@ const Wizard = (props) => {
           />
           {filteredCompanyData.map((company) => (
             <CompanyCard
+              key={uuid()}
               company={company}
               addCompany={addCompany}
               companyId={companyId}

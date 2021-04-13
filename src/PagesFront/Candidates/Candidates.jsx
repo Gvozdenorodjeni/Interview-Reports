@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Candidates.scss";
 import Card from "../../ComponentsFront/Card/Card";
-
+import { v4 as uuid } from "uuid";
 const Candidates = (props) => {
   const [inputValue, setInputValue] = useState("");
   let filteredData = props.candidates.filter((e) =>
@@ -20,7 +20,7 @@ const Candidates = (props) => {
       </div>
       <div className="candidatesdiv">
         {filteredData.map((e) => (
-          <Card candidate={e} />
+          <Card key={uuid()} candidate={e} />
         ))}
       </div>
     </>

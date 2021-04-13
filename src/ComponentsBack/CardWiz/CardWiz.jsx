@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./CardWiz.scss";
-
+import Photo from "../../img/photo.jpg";
 const CardWiz = (props) => {
   const { candidate } = props;
   let background = {};
@@ -13,7 +13,7 @@ const CardWiz = (props) => {
       style={background}
     >
       <div className="card-wrapperWiz">
-        <img src={candidate.avatar} alt="avatar" />
+        <img src={Photo} alt="avatar" />
         <div className="nameandemailWiz">
           <h3 className="nameWiz">{candidate.name}</h3>
           <p className="emailWiz">{candidate.email}</p>
