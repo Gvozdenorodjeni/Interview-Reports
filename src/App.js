@@ -62,6 +62,7 @@ function App() {
               <Reports
                 reports={reports}
                 token={token}
+                setToken={setToken}
                 setDataUpToDate={setDataUpToDate}
               />
             )}
@@ -78,6 +79,7 @@ function App() {
                 candidates={candidates}
                 companies={companies}
                 token={token}
+                setToken={setToken}
                 setDataUpToDate={setDataUpToDate}
               />
             )}

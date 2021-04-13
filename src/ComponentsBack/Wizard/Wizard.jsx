@@ -56,7 +56,12 @@ const Wizard = (props) => {
         status: status,
         note: notes,
       }),
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      console.log(res);
+      if (res.status === 401) {
+        props.setToken(null);
+      }
+    });
     props.setDataUpToDate(false);
   };
 

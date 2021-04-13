@@ -16,13 +16,17 @@ const Reports = (props) => {
       headers: {
         Authorization: `Bearer ${props.token}`,
       },
-    }).then((res) => console.log(res));
+    }).then((res) => {
+      console.log(res);
+      if (res.status === 401) {
+        props.setToken(null);
+      }
+    });
     props.setDataUpToDate(false);
   };
 
   const [inputValue, setInputValue] = useState("");
   const { reports } = props;
-  console.log(reports);
   let filteredData = reports.filter(
     (e) =>
       e.candidateName.toLowerCase().includes(inputValue.toLocaleLowerCase()) ||

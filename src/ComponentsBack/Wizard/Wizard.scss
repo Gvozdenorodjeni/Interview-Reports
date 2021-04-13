@@ -30,6 +30,7 @@
   }
   .wizardCandidates {
     width: 70%;
+
     padding-left: 15px;
     box-shadow: -4px 0px 0px -2px #ff893d;
     .backNextButtons {
@@ -68,6 +69,7 @@
 hr {
   margin: 20px auto;
   width: 80%;
+  background-color: #ff893d;
 }
 // THIRD PAGE
 
@@ -84,6 +86,12 @@ hr {
     align-items: center;
     justify-content: space-between;
   }
+  select {
+    border: 2px solid #ff893d;
+  }
+  input {
+    border: 2px solid #ff893d;
+  }
   p {
     color: gray;
   }
@@ -94,6 +102,7 @@ hr {
 
     textarea {
       width: 100%;
+      border: 2px solid #ff893d;
     }
   }
   .backNextButtons {
