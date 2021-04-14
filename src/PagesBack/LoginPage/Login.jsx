@@ -7,6 +7,7 @@ const LoginPage = (props) => {
   const [tokenOk, setTokenOk] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const sendForm = () => {
     fetch("http://localhost:3333/login", {
       method: "POST",
@@ -28,7 +29,7 @@ const LoginPage = (props) => {
         setTokenOk(1);
       })
       .catch((err) => {
-        alert(err);
+        setError(err.toString());;
       });
   };
 
@@ -55,6 +56,7 @@ const LoginPage = (props) => {
           <button type="button" onClick={sendForm}>
             Login
           </button>
+          <h3>{error}</h3>
         </form>
       </div>
     </div>

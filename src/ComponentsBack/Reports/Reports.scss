@@ -12,7 +12,7 @@ $orange: #fb743e;
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 4px 2px -2px #ff893d;
+    box-shadow: 0 4px 2px -2px $orange;
     cursor: pointer;
     i{
       color: $dark;
@@ -28,7 +28,7 @@ $orange: #fb743e;
     }
     div {
       width: 20%;
-      border-right: 2px solid #ff893d;
+      border-right: 2px solid $orange;
       text-align: center;
     }
     div:last-child {
@@ -56,7 +56,7 @@ $orange: #fb743e;
   margin: 30px auto 30px auto;
   input {
     display: block;
-    border: 2px solid #ff893d;
+    border: 2px solid $orange;
     border-radius: 10px;
     width: 13%;
     padding: 2px 3px;

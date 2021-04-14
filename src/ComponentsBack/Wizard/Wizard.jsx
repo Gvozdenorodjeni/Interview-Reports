@@ -105,7 +105,7 @@ const Wizard = (props) => {
             />
           ))}
           <button
-            className="wizardNext"
+            className="next wizardNext"
             onClick={() => {
               if (candidateName) setPage(2);
               else alert("Please select candidate");
@@ -168,7 +168,7 @@ const Wizard = (props) => {
               BACK
             </button>
             <button
-              className="wizardNext"
+              className="next wizardNext"
               onClick={() => {
                 if (companyName) setPage(3);
                 else alert("Please select a company");
@@ -253,7 +253,7 @@ const Wizard = (props) => {
               BACK
             </button>
             <Link to="/reports">
-              <button className="wizardNext" onClick={() => handleFetch()}>
+              <button className="next wizardNext" onClick={() => handleFetch()}>
                 SUBMIT
               </button>
             </Link>

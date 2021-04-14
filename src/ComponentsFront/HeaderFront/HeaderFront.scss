@@ -5,7 +5,7 @@ $orange: #fb743e;
 .headerFrontBackground {
   width: 100%;
   padding: 5px 0px;
-  background-color: #ff893d;
+  background-color: $orange;
 
   .headerFront {
     width: 90%;
@@ -20,7 +20,7 @@ $orange: #fb743e;
     }
     .loginLogout {
       button {
-        background-color: #383e56;
+        background-color: $dark;
         border-radius: 5px;
         padding: 8px 16px;
         color: white;

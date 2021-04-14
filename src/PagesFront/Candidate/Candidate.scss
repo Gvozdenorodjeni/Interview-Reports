@@ -1,4 +1,7 @@
-// color: #ff893d;
+$light: #eeeeee;
+$mid: #9fb8ad;
+$dark: #383e56;
+$orange: #fb743e;
 .singleCandidateDiv {
   width: 90%;
   margin: auto;
@@ -40,7 +43,7 @@
       text-align: center;
     }
     thead {
-      background-color: #ff893d;
+      background-color: $orange;
     }
     tbody tr:nth-child(even) {
       background-color: #fdc29a;
@@ -55,7 +58,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  border: 2px solid #ff893d;
+  border: 2px solid $orange;
   padding: 25px;
   z-index: 1000;
   h2 {
