@@ -53,7 +53,7 @@ const LoginPage = (props) => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button type="button" onClick={sendForm}>
+          <button id='login' type="button" onClick={sendForm}>
             Login
           </button>
           <h3>{error}</h3>
