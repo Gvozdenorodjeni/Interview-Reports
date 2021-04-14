@@ -1,3 +1,36 @@
+$light: #eeeeee;
+$mid: #9fb8ad;
+$dark: #383e56;
+$orange: #fb743e;
+@mixin next-btn {
+  background-color: $dark;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 15px;
+  outline: none;
+  &:hover {
+    color: white;
+    background-color: $orange;
+    transform: scale(1.2);
+  }
+}
+
+@mixin back-btn {
+  background-color: gray;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 15px;
+  outline: none;
+  &:hover {
+    background-color: gray;
+    color: #ffffff;
+  }
+}
+
 .wizardCandidate {
   width: 80%;
   margin: auto;
@@ -26,50 +59,50 @@
         justify-content: center;
         margin-right: 10px;
       }
+      @media only screen and(max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   }
   .wizardCandidates {
     width: 70%;
 
     padding-left: 15px;
-    box-shadow: -4px 0px 0px -2px #ff893d;
+    box-shadow: -4px 0px 0px -2px $orange;
     .backNextButtons {
       display: flex;
       .back {
-        background-color: gray;
+        @include back-btn();
       }
     }
     .wizardNext {
-      background-color: #ff893d;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 5px 10px;
-      margin: 15px;
-      outline: none;
-      &:hover {
-        color: #ff893d;
-        background-color: white;
-      }
+      @include next-btn();
     }
     .searchWizard {
       display: block;
-      border: 2px solid #ff893d;
+      border: 2px solid $orange;
       border-radius: 10px;
-      width: 23%;
+      width: 20%;
       padding: 2px 3px;
-      margin-bottom: 10px;
+      margin-left: 2%;
+      margin-bottom: 15px;
       &:focus {
+        transform: scale(1.2);
         outline: none;
       }
     }
+  }
+  @media only screen and(max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
 hr {
   margin: 20px auto;
   width: 80%;
-  background-color: #ff893d;
+  background-color: $orange;
 }
 // THIRD PAGE
 
@@ -85,15 +118,20 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media only screen and(max-width: 900px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   select {
-    border: 2px solid #ff893d;
+    border: 2px solid $orange;
   }
   input {
-    border: 2px solid #ff893d;
+    border: 2px solid $orange;
   }
   p {
     color: gray;
+    margin-bottom: 10px;
   }
 
   .notes {
@@ -102,31 +140,18 @@ hr {
 
     textarea {
       width: 100%;
-      border: 2px solid #ff893d;
+      border: 2px solid $orange;
     }
   }
   .backNextButtons {
     .wizardNext {
-      background-color: #ff893d;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      padding: 5px 10px;
-      margin: 15px;
-      outline: none;
-      &:hover {
-        color: #ff893d;
-        background-color: white;
-      }
+      @include next-btn();
     }
     .back {
-      background-color: gray;
+      @include back-btn();
     }
   }
 }
 
 @media only screen and (max-width: 900px) {
-  .steps {
-    display: none;
-  }
 }

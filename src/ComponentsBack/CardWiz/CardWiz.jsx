@@ -5,7 +5,7 @@ const CardWiz = (props) => {
   const { candidate } = props;
   let background = {};
   if (props.candidateId === candidate.id)
-    background = { backgroundColor: "#ff893d" };
+    background = { backgroundColor: "#fb743e" };
   return (
     <div
       className="cardWiz"

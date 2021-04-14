@@ -30,14 +30,14 @@ $orange: #fb743e;
     }
   }
   .infoButton {
-    background-color: #383e56;
+    background-color: $dark;
     border-radius: 5px;
     padding: 4px 8px;
     color: white;
     border: none;
     &:hover {
       transition: all 200ms;
-      background-color: #ff893d;
+      background-color: $orange;
       color: white;
       cursor: pointer;
       transform: scale(1.2);
