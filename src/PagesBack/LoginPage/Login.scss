@@ -1,3 +1,7 @@
+$light: #eeeeee;
+$mid: #9fb8ad;
+$dark: #383e56;
+$orange: #fb743e;
 .loginPage {
   width: 100vh;
   height: 90vh;
@@ -6,8 +10,7 @@
   align-items: center;
   margin: auto;
   .formBorder {
-    // border: 0.1px solid #ff893d;
-    box-shadow: 0 0 7px #ff893d;
+    box-shadow: 0 0 7px $orange;
     padding: 90px;
   }
   form {
@@ -18,7 +21,7 @@
     p {
       margin-bottom: 10px;
       color: #ffffff;
-      background-color: #ff893d;
+      background-color: $orange;
       border-radius: 10px;
       padding: 3px 6px;
       width: 60%;
@@ -27,13 +30,13 @@
     input {
       margin-bottom: 10px;
       border-radius: 10px;
-      border: 2px solid #ff893d;
+      border: 2px solid $orange;
       &:focus {
         outline: none;
       }
     }
     button {
-      background-color: #ff893d;
+      background-color: $orange;
       border: none;
       padding: 5px;
       border-radius: 10px;
@@ -43,7 +46,7 @@
       }
       &:hover {
         background-color: #ffffff;
-        color: #ff893d;
+        color: $orange;
         transition: all 200ms;
       }
     }

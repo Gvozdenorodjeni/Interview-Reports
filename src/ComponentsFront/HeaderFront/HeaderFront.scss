@@ -1,3 +1,7 @@
+$light: #eeeeee;
+$mid: #9fb8ad;
+$dark: #383e56;
+$orange: #fb743e;
 .headerFrontBackground {
   width: 100%;
   padding: 5px 0px;
@@ -16,18 +20,19 @@
     }
     .loginLogout {
       button {
-        background-color: #ffffff;
+        background-color: #383e56;
         border-radius: 5px;
-        padding: 2px 4px;
+        padding: 8px 16px;
+        color: white;
         border: none;
-        color: #ff893d;
-        margin-left: 10px;
-        font-weight: bold;
+        margin: 5px;
+        font-weight: 500;
         &:hover {
-          background-color: #ff893d;
-          color: #ffffff;
           transition: all 200ms;
+          background-color: white;
+          color: $orange;
           cursor: pointer;
+          transform: scale(1.1);
         }
         &:focus {
           outline: none;

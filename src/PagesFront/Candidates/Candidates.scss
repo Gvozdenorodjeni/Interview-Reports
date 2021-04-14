@@ -1,17 +1,23 @@
+$light: #eeeeee;
+$mid: #9fb8ad;
+$dark: #383e56;
+$orange: #fb743e;
 .searchCandidates {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  margin: 10px auto 10px auto;
+  margin: 30px auto 30px auto;
   input {
     display: block;
-    border: 2px solid #ff893d;
+    border: 2px solid $orange;
     border-radius: 10px;
     width: 13%;
     padding: 2px 7px;
     &:focus {
+      transform: scale(1.2);
       outline: none;
     }
   }
 }
+ 
