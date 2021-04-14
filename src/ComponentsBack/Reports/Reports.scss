@@ -1,3 +1,7 @@
+$light: #eeeeee;
+$mid: #9fb8ad;
+$dark: #383e56;
+$orange: #fb743e;
 .reportsWrapper {
   width: 90%;
   margin: auto;
@@ -9,8 +13,15 @@
     display: flex;
     justify-content: space-between;
     box-shadow: 0 4px 2px -2px #ff893d;
+    cursor: pointer;
+    i {
+      color: $dark;
+      &:hover {
+        transform: scale(1.5);
+      }
+    }
     &:hover {
-      background-color: #ff893d;
+      background-color: #ffc38a;
       div {
         border-right: 2px solid #ffffff;
       }
@@ -42,7 +53,7 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  margin: 10px auto 30px auto;
+  margin: 30px auto 30px auto;
   input {
     display: block;
     border: 2px solid #ff893d;
@@ -50,7 +61,59 @@
     width: 13%;
     padding: 2px 3px;
     &:focus {
+      transform: scale(1.2);
       outline: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .searchReports {
+    justify-content: none;
+    flex-direction: column;
+    h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 150px;
+    }
+  }
+
+  .reportsWrapper {
+    .reportWrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 2px -2px #ff893d;
+      cursor: pointer;
+      &:hover {
+        background-color: #ffc38a;
+        div {
+          border-right: 2px solid #ffffff;
+        }
+      }
+      div {
+        width: 50%;
+        border-right: 2px solid #ff893d;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      div:nth-child(even) {
+        border: none;
+      }
+      div:last-child {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: none;
+        .delete {
+          color: rgb(255, 41, 41);
+          margin-right: 20px;
+        }
+      }
     }
   }
 }

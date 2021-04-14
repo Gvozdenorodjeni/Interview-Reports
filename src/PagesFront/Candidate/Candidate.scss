@@ -14,7 +14,6 @@
     }
     .nameeMailDiv {
       width: 30%;
-
       h6 {
         margin: 10px;
       }
@@ -86,6 +85,39 @@
     width: 50%;
     .personalNote {
       color: black;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .infoDiv {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    img {
+      display: block;
+      width: 30%;
+      background-color: grey;
+    }
+    .nameeMailDiv {
+      width: 30%;
+      h6 {
+        margin: 10px;
+      }
+      h3 {
+        margin: 10px;
+        font-size: 16px;
+      }
+    }
+    .dateEducationDiv {
+      width: 30%;
+      h6 {
+        margin: 10px;
+      }
+      h3 {
+        margin: 10px;
+        font-size: 16px;
+      }
     }
   }
 }
