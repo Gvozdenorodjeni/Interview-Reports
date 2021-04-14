@@ -4,7 +4,6 @@
   justify-content: space-between;
   width: 90%;
   margin: 10px auto 10px auto;
-  height: 100px;
   box-shadow: 0 4px 2px -2px #ff893d;
   .card-wrapper {
     display: flex;
@@ -32,6 +31,25 @@
     }
     &:focus {
       outline: none;
+    }
+  }
+}
+@media only screen and (max-width: 900px) {
+  .card {
+    flex-direction: column;
+    .infoButton {
+      margin: 5px;
+    }
+    .card-wrapper {
+      img {
+        margin: 10px auto;
+      }
+      flex-direction: column;
+      .nameandemail {
+        h3 {
+          text-align: center;
+        }
+      }
     }
   }
 }

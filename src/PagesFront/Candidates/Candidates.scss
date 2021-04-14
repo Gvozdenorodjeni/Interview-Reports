@@ -15,3 +15,17 @@
     }
   }
 }
+@media only screen and (max-width: 900px) {
+  .searchCandidates {
+    justify-content: none;
+    flex-direction: column;
+    h1 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    input {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+  }
+}

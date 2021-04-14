@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Reports.scss";
 import Modal from "../../ComponentsFront/Modal/Modal";
-
+import { v4 as uuid } from "uuid";
 const Reports = (props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [report, setReport] = useState(null);
@@ -46,7 +46,7 @@ const Reports = (props) => {
       </div>
       <div className="reportsWrapper">
         {filteredData.map((e) => (
-          <div className="reportWrapper">
+          <div className="reportWrapper" key={uuid()}>
             <div>
               <h4>{e.companyName}</h4>
               <h6>Company</h6>

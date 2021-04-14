@@ -124,3 +124,9 @@ hr {
     }
   }
 }
+
+@media only screen and (max-width: 900px) {
+  .steps {
+    display: none;
+  }
+}

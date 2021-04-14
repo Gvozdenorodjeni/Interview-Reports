@@ -36,3 +36,19 @@
     }
   }
 }
+
+@media only screen and (max-width: 420px) {
+  .headerFrontBackground {
+    .headerFront {
+      flex-direction: column;
+      .loginLogout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        button {
+          margin: 1px;
+        }
+      }
+    }
+  }
+}
