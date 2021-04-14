@@ -7,7 +7,7 @@ const CompanyCard = (props) => {
     background = { backgroundColor: "#ff893d" };
   return (
     <div
-      className="cardWiz"
+      className="companyWiz"
       onClick={() => props.addCompany(props.company.id, props.company.name)}
       style={background}
     >

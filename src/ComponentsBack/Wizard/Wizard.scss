@@ -131,7 +131,7 @@ hr {
   }
   p {
     color: gray;
-    margin-bottom: 10px;
+    margin: 5px;
   }
 
   .notes {
@@ -149,6 +149,18 @@ hr {
     }
     .back {
       @include back-btn();
+    }
+  }
+}
+@media only screen and(max-width: 900px) {
+  .wizardCandidate {
+    .wizardCandidates {
+      box-shadow: 0px -5px 0px -2px $orange;
+      margin-top: 10px;
+      .searchWizard {
+        width: 150px;
+        margin: 10px auto;
+      }
     }
   }
 }
