@@ -8,11 +8,11 @@ $orange: #fb743e;
   justify-content: space-between;
   width: 100%;
   padding-left: 15px;
+  margin-bottom: 5px;
 
-  height: 100px;
-  // box-shadow: 0 4px 2px -2px #ff893d; 
+  // box-shadow: 0 4px 2px -2px #ff893d;
   box-shadow: 0 41.8px 33.4px rgba(0, 0, 0, 0.086);
-  &:hover{
+  &:hover {
     box-shadow: 0px 4px 2px -2px $orange;
     transform: scale(1.02);
   }
@@ -26,6 +26,27 @@ $orange: #fb743e;
     }
     .nameWiz {
       margin-bottom: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .cardWiz {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .card-wrapperWiz {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 20px;
+      img {
+        display: block;
+        margin: 5px auto;
+        width: 85px;
+      }
     }
   }
 }
